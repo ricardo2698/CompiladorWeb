@@ -1,20 +1,90 @@
+{% load staticfiles%}
+{% load static%}
+{% load admin_urls%}
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title> Login DJangp</title>
 
-    	<title>{% block page_title %}{% endblock %}</title>
-      {% block css %}{% endblock %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- My CSS -->
+
+    <link rel= "stylesheet" href="{% static 'css/style.css'%}">
 
   </head>
   <body>
-    <header >
-        Hola Header
-    </header>
-    <section>
-      {% block content %}
-      {% endblock %}
-    </section>
+    <nav class="grey darken-4">
+	    <div class="nav-wrapper">
+		    <a href="#!" class="brand-logo center"><img src="{%static 'img/logo.png'%}"></a>
+		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		    <ul class="right hide-on-med-and-down">
+				<li><a href="#">Inicio</a></li>
+		        <li><a href="#">Trabajos</a></li>
+		        <li><a href="#">Redes</a></li>
+		        <li><a href="#">Contactos</a></li>
+		    </ul>
+		    <ul class="side-nav" id="mobile-demo">
+		        <li><a href="#">Inicio</a></li>
+		        <li><a href="#">Trabajos</a></li>
+		        <li><a href="#">Redes</a></li>
+		        <li><a href="#">Contactos</a></li>
+		    </ul>
+		</div>
+  	</nav>
+	<div class="had-container">
+
+
+
+   <h1>holaaa</h1>
+
+   <h2>
+
+     {% if user.is_authenticated %}
+          {{ user.username }}
+
+          <a href="{% url "userprofiles:logout" %}">logout</a>
+
+    {% else %}
+
+          <a href="{% url "userprofiles:authentication" %}">login</a>
+
+     {% endif %}
+
+
+   </h2>
+
+    </div> <!-- fin del .container -->
+
+<footer class="page-footer grey darken-4">
+    <div class="footer-copyright">
+        <div class="container center">
+        	Copyright © 2018 - Rircardo Pelaez & FREDY RIVERA
+        </div>
+         <div class="container center">
+        	UNIVERSIDAD DEL MAGDALENA - 2018-I
+        </div>
+    </div>
+</footer>
+
+    <!-- jQuery  Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{%static 'js/mySpxript.js'%}"></script>
 
   </body>
 </html>

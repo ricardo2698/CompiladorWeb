@@ -1,0 +1,12 @@
+[0;1;32m●[0m mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since dom 2018-05-27 12:52:13 -05; 3min 6s ago
+  Process: 15129 ExecStartPost=/usr/share/mysql/mysql-systemd-start post (code=exited, status=0/SUCCESS)
+  Process: 15120 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+ Main PID: 15128 (mysqld)
+   CGroup: /system.slice/mysql.service
+           └─15128 /usr/sbin/mysqld
+
+may 27 12:52:12 ricardos systemd[1]: Starting MySQL Community Server...
+may 27 12:52:13 ricardos systemd[1]: Started MySQL Community Server.
+may 27 12:54:06 ricardos systemd[1]: Started MySQL Community Server.
